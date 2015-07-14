@@ -1,0 +1,6 @@
+*~
+*.o
+extract-artwork
+README.html
+extract-artwork-*.tar.xz
+extract-artwork-*.tar.xz.asc

@@ -1,12 +1,17 @@
 # extract-artwork - Extract artwork from media files
 
+# commands
 CC	:= gcc
 MD	:= markdown
 INSTALL	:= install
 CP	:= cp
 RM	:= rm
-CFLAGS	+= -std=c11 -O2 -Wall -Werror
+
+# flags
+CFLAGS	+= -std=c11 -O2 -fPIC -Wall -Werror
 CFLAGS	+= $(shell pkg-config --cflags --libs libavformat libavutil)
+LDFLAGS	+= -Wl,-z,now -Wl,-z,relro -pie
+
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
 VERSION := 0.0.1
@@ -14,7 +19,7 @@ VERSION := 0.0.1
 all: extract-artwork README.html
 
 extract-artwork: extract-artwork.c
-	$(CC) $(CFLAGS) -o extract-artwork extract-artwork.c
+	$(CC) $(CFLAGS) $(LDFLAGS) -o extract-artwork extract-artwork.c
 
 README.html: README.md
 	$(MD) README.md > README.html

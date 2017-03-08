@@ -37,4 +37,4 @@ Just run `extract-artwork` and add argument with media file names.
 ### Upstream
 
 URL: [GitHub.com](https://github.com/eworm-de/extract-artwork)  
-Mirror: [eworm.de](http://git.eworm.de/cgit.cgi/extract-artwork/)
+Mirror: [eworm.de](https://git.eworm.de/cgit.cgi/extract-artwork/)

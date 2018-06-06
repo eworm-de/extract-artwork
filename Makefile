@@ -39,3 +39,4 @@ clean:
 release:
 	git archive --format=tar.xz --prefix=extract-artwork-$(VERSION)/ $(VERSION) > extract-artwork-$(VERSION).tar.xz
 	gpg -ab extract-artwork-$(VERSION).tar.xz
+	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=extract-artwork-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign | git hash-object -w --stdin) $(VERSION)

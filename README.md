@@ -11,7 +11,7 @@ Requirements
 To compile and run `extract-artwork` you need:
 
 * [libav](https://libav.org/) or [ffmpeg](https://www.ffmpeg.org/)
-* [markdown](http://daringfireball.net/projects/markdown/) (HTML documentation)
+* [markdown](https://daringfireball.net/projects/markdown/) (HTML documentation)
 
 Some systems may require additional development packages for the libraries.
 

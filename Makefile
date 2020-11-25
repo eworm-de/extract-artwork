@@ -19,7 +19,7 @@ VERSION := 0.0.2
 all: extract-artwork README.html
 
 extract-artwork: extract-artwork.c
-	$(CC) $(CFLAGS) $(LDFLAGS) -o extract-artwork extract-artwork.c
+	$(CC) extract-artwork.c $(CFLAGS) $(LDFLAGS) -o extract-artwork
 
 README.html: README.md
 	$(MD) README.md > README.html

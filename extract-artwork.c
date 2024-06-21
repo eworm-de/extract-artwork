@@ -55,11 +55,6 @@ int main(int argc, char **argv) {
 			goto next;
 		}
 
-		if (pFormatCtx->iformat->read_header(pFormatCtx) < 0) {
-			fprintf(stderr, "%s: could not read the format header\n", argv[i]);
-			goto next;
-		}
-
 		/* find the first attached picture, if available */
 		for (j = 0; j < pFormatCtx->nb_streams; j++) {
 			if (pFormatCtx->streams[j]->disposition & AV_DISPOSITION_ATTACHED_PIC) {

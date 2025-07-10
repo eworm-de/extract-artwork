@@ -1,6 +1,10 @@
 extract-artwork
 ===============
 
+[![GitHub stars](https://img.shields.io/github/stars/eworm-de/extract-artwork?logo=GitHub&style=flat&color=red)](https://github.com/eworm-de/extract-artwork/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/eworm-de/extract-artwork?logo=GitHub&style=flat&color=green)](https://github.com/eworm-de/extract-artwork/network)
+[![GitHub watchers](https://img.shields.io/github/watchers/eworm-de/extract-artwork?logo=GitHub&style=flat&color=blue)](https://github.com/eworm-de/extract-artwork/watchers)
+
 **Extract artwork from media files**
 
 Takes a number of media files and extracts artwork images.

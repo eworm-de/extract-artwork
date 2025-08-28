@@ -14,7 +14,8 @@ LDFLAGS	+= -Wl,-z,now -Wl,-z,relro -pie
 
 # this is just a fallback in case you do not use git but downloaded
 # a release tarball...
-VERSION := 0.0.4
+DISTVER := 0.0.4
+VERSION ?= $(shell git describe --long 2>/dev/null || echo $(DISTVER))
 
 all: extract-artwork README.html
 
@@ -37,6 +38,6 @@ clean:
 	$(RM) -f *.o *~ README.html extract-artwork
 
 release:
-	git archive --format=tar.xz --prefix=extract-artwork-$(VERSION)/ $(VERSION) > extract-artwork-$(VERSION).tar.xz
-	gpg --armor --detach-sign --comment extract-artwork-$(VERSION).tar.xz extract-artwork-$(VERSION).tar.xz
-	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=extract-artwork-$(VERSION)/ $(VERSION) | gpg --armor --detach-sign --comment extract-artwork-$(VERSION).tar | git hash-object -w --stdin) $(VERSION)
+	git archive --format=tar.xz --prefix=extract-artwork-$(DISTVER)/ $(DISTVER) > extract-artwork-$(DISTVER).tar.xz
+	gpg --armor --detach-sign --comment extract-artwork-$(DISTVER).tar.xz extract-artwork-$(DISTVER).tar.xz
+	git notes --ref=refs/notes/signatures/tar add -C $$(git archive --format=tar --prefix=extract-artwork-$(DISTVER)/ $(DISTVER) | gpg --armor --detach-sign --comment extract-artwork-$(DISTVER).tar | git hash-object -w --stdin) $(DISTVER)

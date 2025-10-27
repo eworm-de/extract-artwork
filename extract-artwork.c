@@ -49,9 +49,10 @@ int main(int argc, char **argv) {
 			goto next;
 		}
 
-		/* only mp3 file contain artwork, so ignore others */
-		if (strcmp(pFormatCtx->iformat->name, "mp3") != 0) {
-			fprintf(stderr, "%s: not a mp3 file\n", argv[i]);
+		/* only flac & mp3 files contain artwork, so ignore others */
+		if (strcmp(pFormatCtx->iformat->name, "flac") != 0 &&
+		    strcmp(pFormatCtx->iformat->name, "mp3") != 0) {
+			fprintf(stderr, "%s: not a supported media file\n", argv[i]);
 			goto next;
 		}
 

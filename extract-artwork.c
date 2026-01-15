@@ -84,5 +84,3 @@ next:
 
 	return EXIT_SUCCESS;
 }
-
-// vim: set syntax=c:
